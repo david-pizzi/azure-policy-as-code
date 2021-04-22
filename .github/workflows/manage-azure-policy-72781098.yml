@@ -6,18 +6,12 @@ on:
         description: 'Reason for triggering the workflow run'
         required: false
         default: 'Updating Azure Policies'
+  push:
+    paths:
+      - 'policies/**'
+      - 'initiatives/**'
+      - .github/workflows/manage-azure-policy-72781098.yml
 
-
-## Uncomment the following if you wish to automatically trigger workflow run with every commit
-#
-#  push:
-#    paths:
-#      - 'policies/deny-changing-vnet-dns-settings_deny-changing-vnet-dns-settings/**'
-#      - 'policies/deny-peering-to-non-approved-vnets_deny-peering-to-non-approved-vnets/**'
-#      - 'policies/deny-route-nexthopvirtualappliance_deny-route-nexthopvirtualappliance/**'
-#      - 'policies/deny-route-nexthopinternet_deny-route-nexthopinternet/**'
-#      - 'initiatives/network-guardrail-1.0.0-preview_9338369c588440fa845ebcf3/**'
-#      - .github/workflows/manage-azure-policy-72781098.yml
 jobs:
   apply-azure-policy:
     runs-on: ubuntu-latest
@@ -34,8 +28,5 @@ jobs:
       with:
         mode: complete
         paths: |
-          policies/deny-changing-vnet-dns-settings_deny-changing-vnet-dns-settings/**
-          policies/deny-peering-to-non-approved-vnets_deny-peering-to-non-approved-vnets/**
-          policies/deny-route-nexthopvirtualappliance_deny-route-nexthopvirtualappliance/**
-          policies/deny-route-nexthopinternet_deny-route-nexthopinternet/**
-          initiatives/network-guardrail-1.0.0-preview_9338369c588440fa845ebcf3/**
+          policies/**
+          initiatives/**
