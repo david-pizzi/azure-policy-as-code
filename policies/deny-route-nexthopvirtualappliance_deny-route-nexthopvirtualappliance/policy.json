@@ -9,14 +9,14 @@
    "version": "1.0.0-preview",
    "createdBy": "d5f44c7e-76bd-4b71-b6c4-7465e53ee03a",
    "createdOn": "2021-04-21T22:22:15.3540599Z",
-   "updatedBy": null,
-   "updatedOn": null,
+   "updatedBy": "df5e906b-3b7a-4b9f-bef1-b1142b127bf4",
+   "updatedOn": "2021-04-22T07:55:18.8624963Z",
    "gitHubPolicy": {
-    "digest": "e8a0de117b68ecbe79709af5c455a189f3244a9e",
-    "repoName": "david-pizzi/policy-as-code",
-    "commitSha": "1603445ad50b5deec8091072dd20f6dab32703ba",
-    "runUrl": "https://github.com/david-pizzi/policy-as-code/actions/runs/772209862",
-    "filepath": "policies/deny-route-nexthopvirtualappliance"
+    "digest": "29dc1a49a0bf694ceb43724d8655709ee3d0a48c",
+    "repoName": "david-pizzi/azure-policy-as-code",
+    "commitSha": "cb85e6d7a19a4fac5ffbae343caa9a47bb0d7867",
+    "runUrl": "https://github.com/david-pizzi/azure-policy-as-code/actions/runs/773430671",
+    "filepath": "policies/deny-route-nexthopvirtualappliance_deny-route-nexthopvirtualappliance"
    }
   },
   "parameters": {

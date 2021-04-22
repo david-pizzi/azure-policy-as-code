@@ -38,14 +38,14 @@
    "parameterScopes": {},
    "createdBy": "d5f44c7e-76bd-4b71-b6c4-7465e53ee03a",
    "createdOn": "2021-04-21T22:22:18.6485403Z",
-   "updatedBy": null,
-   "updatedOn": null,
+   "updatedBy": "df5e906b-3b7a-4b9f-bef1-b1142b127bf4",
+   "updatedOn": "2021-04-22T07:55:19.3587458Z",
    "gitHubPolicy": {
-    "digest": "eecc2c430f2cc58c3a8f338cef047ff2396f09a6",
-    "repoName": "david-pizzi/policy-as-code",
-    "commitSha": "1603445ad50b5deec8091072dd20f6dab32703ba",
-    "runUrl": "https://github.com/david-pizzi/policy-as-code/actions/runs/772209862",
-    "filepath": "initiatives/network-guardrail-1.0.0-preview/assign.network-guardrail-1.0.0-preview.json"
+    "digest": "fea54fcb3506c537711f28b5d626f7ba5cf78671",
+    "repoName": "david-pizzi/azure-policy-as-code",
+    "commitSha": "cb85e6d7a19a4fac5ffbae343caa9a47bb0d7867",
+    "runUrl": "https://github.com/david-pizzi/azure-policy-as-code/actions/runs/773430671",
+    "filepath": "initiatives/network-guardrail-1.0.0-preview_9338369c588440fa845ebcf3/assign.network-guardrail-1.0.0-preview_1778c2ab129a44eab60a4da9.json"
    }
   },
   "enforcementMode": "Default"
