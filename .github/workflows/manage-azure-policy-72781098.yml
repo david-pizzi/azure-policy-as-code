@@ -32,6 +32,7 @@ jobs:
     - name: Create or Update Azure Policies
       uses: azure/manage-azure-policy@v0
       with:
+        mode: complete
         paths: |
           policies/deny-changing-vnet-dns-settings_deny-changing-vnet-dns-settings/**
           policies/deny-peering-to-non-approved-vnets_deny-peering-to-non-approved-vnets/**
