@@ -6,7 +6,7 @@
  "properties": {
   "displayName": "network-guardrail-1.0.0-preview",
   "policyDefinitionId": "/subscriptions/ac523bbb-5dca-46d7-9d3a-e16ddae8a7dd/providers/Microsoft.Authorization/policySetDefinitions/9338369c588440fa845ebcf3",
-  "scope": "/subscriptions/ac523bbb-5dca-46d7-9d3a-e16ddae8a7dd",
+  "scope": "/subscriptions/ac523bbb-5dca-46d7-9d3a-e16ddae8a7dd/resourceGroups/vnet",
   "notScopes": [],
   "parameters": {
    "dnsSettings": {
