@@ -10,12 +10,12 @@
    "createdBy": "d5f44c7e-76bd-4b71-b6c4-7465e53ee03a",
    "createdOn": "2021-04-21T22:22:15.2445908Z",
    "updatedBy": "df5e906b-3b7a-4b9f-bef1-b1142b127bf4",
-   "updatedOn": "2021-04-22T07:55:18.7680335Z",
+   "updatedOn": "2021-04-22T08:15:48.3119447Z",
    "gitHubPolicy": {
-    "digest": "15ffb4b651af4b2008f5e3241a64fb6f1302f058",
+    "digest": "972acab978490c8bab91185d82453e681ea5d73c",
     "repoName": "david-pizzi/azure-policy-as-code",
-    "commitSha": "cb85e6d7a19a4fac5ffbae343caa9a47bb0d7867",
-    "runUrl": "https://github.com/david-pizzi/azure-policy-as-code/actions/runs/773430671",
+    "commitSha": "1166790378de72fdca8ada85e2d06dad8a661603",
+    "runUrl": "https://github.com/david-pizzi/azure-policy-as-code/actions/runs/773484853",
     "filepath": "policies/deny-changing-vnet-dns-settings_deny-changing-vnet-dns-settings"
    }
   },
@@ -24,7 +24,7 @@
     "type": "array",
     "metadata": {
      "displayname": "Enforced DNS Settings",
-     "description": "UPDATE: Users will be unable to change the DNS settings on a VNet from the values defined in this array"
+     "description": "Users will be unable to change the DNS settings on a VNet from the values defined in this array"
     }
    }
   },

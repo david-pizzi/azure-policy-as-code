@@ -9,12 +9,12 @@
    "createdBy": "d5f44c7e-76bd-4b71-b6c4-7465e53ee03a",
    "createdOn": "2021-04-21T22:22:18.4923722Z",
    "updatedBy": "df5e906b-3b7a-4b9f-bef1-b1142b127bf4",
-   "updatedOn": "2021-04-22T07:55:19.0489035Z",
+   "updatedOn": "2021-04-22T08:15:48.6928618Z",
    "gitHubPolicy": {
-    "digest": "481e0e8d3921e5aa973477d03a2d2d4a892b2ba3",
+    "digest": "30cc984e86e17db829e681a999cd9f6a7d50f7ff",
     "repoName": "david-pizzi/azure-policy-as-code",
-    "commitSha": "cb85e6d7a19a4fac5ffbae343caa9a47bb0d7867",
-    "runUrl": "https://github.com/david-pizzi/azure-policy-as-code/actions/runs/773430671",
+    "commitSha": "1166790378de72fdca8ada85e2d06dad8a661603",
+    "runUrl": "https://github.com/david-pizzi/azure-policy-as-code/actions/runs/773484853",
     "filepath": "initiatives/network-guardrail-1.0.0-preview_9338369c588440fa845ebcf3"
    }
   },
