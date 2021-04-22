@@ -1,0 +1,102 @@
+{
+ "properties": {
+  "displayName": "deny-route-nexthopvirtualappliance",
+  "policyType": "Custom",
+  "mode": "All",
+  "description": "Deny route with address prefix 0.0.0.0/0 not pointing to the virtual appliance. Both creating routes as a standalone resource or nested within their parent resource route table are considered.",
+  "metadata": {
+   "category": "Network",
+   "version": "1.0.0-preview",
+   "createdBy": "d5f44c7e-76bd-4b71-b6c4-7465e53ee03a",
+   "createdOn": "2021-04-21T22:22:15.3540599Z",
+   "updatedBy": null,
+   "updatedOn": null,
+   "gitHubPolicy": {
+    "digest": "e8a0de117b68ecbe79709af5c455a189f3244a9e",
+    "repoName": "david-pizzi/policy-as-code",
+    "commitSha": "1603445ad50b5deec8091072dd20f6dab32703ba",
+    "runUrl": "https://github.com/david-pizzi/policy-as-code/actions/runs/772209862",
+    "filepath": "policies/deny-route-nexthopvirtualappliance"
+   }
+  },
+  "parameters": {
+   "routeTableSettings": {
+    "type": "Object",
+    "metadata": {
+     "displayName": "Route Table Settings",
+     "description": "Location-specific settings for route tables."
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "anyOf": [
+     {
+      "allOf": [
+       {
+        "field": "type",
+        "equals": "Microsoft.Network/routeTables"
+       },
+       {
+        "count": {
+         "field": "Microsoft.Network/routeTables/routes[*]",
+         "where": {
+          "allOf": [
+           {
+            "field": "Microsoft.Network/routeTables/routes[*].addressPrefix",
+            "equals": "0.0.0.0/0"
+           },
+           {
+            "anyOf": [
+             {
+              "field": "Microsoft.Network/routeTables/routes[*].nextHopType",
+              "notEquals": "VirtualAppliance"
+             },
+             {
+              "field": "Microsoft.Network/routeTables/routes[*].nextHopIpAddress",
+              "notEquals": "[parameters('routeTableSettings')[field('location')].virtualApplianceIpAddress]"
+             }
+            ]
+           }
+          ]
+         }
+        },
+        "greater": 0
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "field": "type",
+        "equals": "Microsoft.Network/routeTables/routes"
+       },
+       {
+        "field": "Microsoft.Network/routeTables/routes/addressPrefix",
+        "equals": "0.0.0.0/0"
+       },
+       {
+        "anyOf": [
+         {
+          "field": "Microsoft.Network/routeTables/routes/nextHopType",
+          "notEquals": "VirtualAppliance"
+         },
+         {
+          "field": "Microsoft.Network/routeTables/routes/nextHopIpAddress",
+          "notEquals": "[parameters('routeTableSettings')[field('location')].virtualApplianceIpAddress]"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "then": {
+    "effect": "deny"
+   }
+  }
+ },
+ "id": "/subscriptions/ac523bbb-5dca-46d7-9d3a-e16ddae8a7dd/providers/Microsoft.Authorization/policyDefinitions/deny-route-nexthopvirtualappliance",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "deny-route-nexthopvirtualappliance"
+}

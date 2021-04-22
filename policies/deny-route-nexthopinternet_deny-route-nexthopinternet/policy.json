@@ -1,0 +1,65 @@
+{
+ "properties": {
+  "displayName": "deny-route-nexthopinternet",
+  "policyType": "Custom",
+  "mode": "All",
+  "description": "Deny route with next hop type internet to ensure data loss prevention. Both creating routes as a standalone resource or nested within their parent resource route table are considered.",
+  "metadata": {
+   "category": "Network",
+   "version": "1.0.0-preview",
+   "createdBy": "d5f44c7e-76bd-4b71-b6c4-7465e53ee03a",
+   "createdOn": "2021-04-21T22:22:15.559263Z",
+   "updatedBy": null,
+   "updatedOn": null,
+   "gitHubPolicy": {
+    "digest": "32ca5a513cdf520723ad738e22b3e5a88c4c306d",
+    "repoName": "david-pizzi/policy-as-code",
+    "commitSha": "1603445ad50b5deec8091072dd20f6dab32703ba",
+    "runUrl": "https://github.com/david-pizzi/policy-as-code/actions/runs/772209862",
+    "filepath": "policies/deny-route-nexthopinternet"
+   }
+  },
+  "policyRule": {
+   "if": {
+    "anyOf": [
+     {
+      "allOf": [
+       {
+        "field": "type",
+        "equals": "Microsoft.Network/routeTables"
+       },
+       {
+        "count": {
+         "field": "Microsoft.Network/routeTables/routes[*]",
+         "where": {
+          "field": "Microsoft.Network/routeTables/routes[*].nextHopType",
+          "equals": "Internet"
+         }
+        },
+        "greater": 0
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "field": "type",
+        "equals": "Microsoft.Network/routeTables/routes"
+       },
+       {
+        "field": "Microsoft.Network/routeTables/routes/nextHopType",
+        "equals": "Internet"
+       }
+      ]
+     }
+    ]
+   },
+   "then": {
+    "effect": "deny"
+   }
+  }
+ },
+ "id": "/subscriptions/ac523bbb-5dca-46d7-9d3a-e16ddae8a7dd/providers/Microsoft.Authorization/policyDefinitions/deny-route-nexthopinternet",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "deny-route-nexthopinternet"
+}

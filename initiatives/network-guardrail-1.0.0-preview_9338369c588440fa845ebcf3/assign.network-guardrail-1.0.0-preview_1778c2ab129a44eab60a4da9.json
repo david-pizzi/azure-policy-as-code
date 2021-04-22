@@ -1,0 +1,56 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "network-guardrail-1.0.0-preview",
+  "policyDefinitionId": "/subscriptions/ac523bbb-5dca-46d7-9d3a-e16ddae8a7dd/providers/Microsoft.Authorization/policySetDefinitions/9338369c588440fa845ebcf3",
+  "scope": "/subscriptions/ac523bbb-5dca-46d7-9d3a-e16ddae8a7dd",
+  "notScopes": [],
+  "parameters": {
+   "dnsSettings": {
+    "value": [
+     "8.8.8.8"
+    ]
+   },
+   "allowedVnets": {
+    "value": [
+     "/subscriptions/ac523bbb-5dca-46d7-9d3a-e16ddae8a7dd/resourceGroups/vnet/providers/Microsoft.Network/virtualNetworks/v1"
+    ]
+   },
+   "routeTableSettings": {
+    "value": {
+     "northeurope": {
+      "virtualApplianceIpAddress": "10.0.0.23"
+     },
+     "westeurope": {
+      "virtualApplianceIpAddress": "10.1.0.23"
+     },
+     "disabled": {
+      "virtualApplianceIpAddress": ""
+     }
+    }
+   }
+  },
+  "metadata": {
+   "assignedBy": "david pizzi",
+   "parameterScopes": {},
+   "createdBy": "d5f44c7e-76bd-4b71-b6c4-7465e53ee03a",
+   "createdOn": "2021-04-21T22:22:18.6485403Z",
+   "updatedBy": null,
+   "updatedOn": null,
+   "gitHubPolicy": {
+    "digest": "eecc2c430f2cc58c3a8f338cef047ff2396f09a6",
+    "repoName": "david-pizzi/policy-as-code",
+    "commitSha": "1603445ad50b5deec8091072dd20f6dab32703ba",
+    "runUrl": "https://github.com/david-pizzi/policy-as-code/actions/runs/772209862",
+    "filepath": "initiatives/network-guardrail-1.0.0-preview/assign.network-guardrail-1.0.0-preview.json"
+   }
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/subscriptions/ac523bbb-5dca-46d7-9d3a-e16ddae8a7dd/providers/Microsoft.Authorization/policyAssignments/1778c2ab129a44eab60a4da9",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "1778c2ab129a44eab60a4da9"
+}
