@@ -6,18 +6,19 @@ on:
         description: 'Reason for triggering the workflow run'
         required: false
         default: 'Updating Azure Policies'
+  push:
+    paths:
+      - 'policies/**'
+      - 'initiatives/**'
+      - .github/workflows/manage-azure-policy-8aa81d37.yml
 
-
-## Uncomment the following if you wish to automatically trigger workflow run with every commit
-#
-#  push:
-#    paths:
 #      - 'policies/deny-peering-to-non-approved-vnets_deny-peering-to-non-approved-vnets/**'
 #      - 'policies/deny-route-nexthopinternet_deny-route-nexthopinternet/**'
 #      - 'policies/deny-route-nexthopvirtualappliance_deny-route-nexthopvirtualappliance/**'
 #      - 'policies/deny-changing-vnet-dns-settings_deny-changing-vnet-dns-settings/**'
 #      - 'initiatives/network-guardrail-1.0.0-preview_9338369c588440fa845ebcf3/**'
 #      - .github/workflows/manage-azure-policy-8aa81d37.yml
+
 jobs:
   apply-azure-policy:
     runs-on: ubuntu-latest
@@ -33,8 +34,11 @@ jobs:
       uses: azure/manage-azure-policy@v0
       with:
         paths: |
-          policies/deny-peering-to-non-approved-vnets_deny-peering-to-non-approved-vnets/**
-          policies/deny-route-nexthopinternet_deny-route-nexthopinternet/**
-          policies/deny-route-nexthopvirtualappliance_deny-route-nexthopvirtualappliance/**
-          policies/deny-changing-vnet-dns-settings_deny-changing-vnet-dns-settings/**
-          initiatives/network-guardrail-1.0.0-preview_9338369c588440fa845ebcf3/**
+          policies/**
+          initiatives/**
+
+#         policies/deny-peering-to-non-approved-vnets_deny-peering-to-non-approved-vnets/**
+#         policies/deny-route-nexthopinternet_deny-route-nexthopinternet/**
+#         policies/deny-route-nexthopvirtualappliance_deny-route-nexthopvirtualappliance/**
+#         policies/deny-changing-vnet-dns-settings_deny-changing-vnet-dns-settings/**
+#         initiatives/network-guardrail-1.0.0-preview_9338369c588440fa845ebcf3/**
