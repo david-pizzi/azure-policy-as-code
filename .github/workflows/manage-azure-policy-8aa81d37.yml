@@ -11,14 +11,6 @@ on:
       - 'policies/**'
       - 'initiatives/**'
       - .github/workflows/manage-azure-policy-8aa81d37.yml
-
-#      - 'policies/deny-peering-to-non-approved-vnets_deny-peering-to-non-approved-vnets/**'
-#      - 'policies/deny-route-nexthopinternet_deny-route-nexthopinternet/**'
-#      - 'policies/deny-route-nexthopvirtualappliance_deny-route-nexthopvirtualappliance/**'
-#      - 'policies/deny-changing-vnet-dns-settings_deny-changing-vnet-dns-settings/**'
-#      - 'initiatives/network-guardrail-1.0.0-preview_9338369c588440fa845ebcf3/**'
-#      - .github/workflows/manage-azure-policy-8aa81d37.yml
-
 jobs:
   apply-azure-policy:
     runs-on: ubuntu-latest
@@ -36,9 +28,9 @@ jobs:
         paths: |
           policies/**
           initiatives/**
-
-#         policies/deny-peering-to-non-approved-vnets_deny-peering-to-non-approved-vnets/**
-#         policies/deny-route-nexthopinternet_deny-route-nexthopinternet/**
-#         policies/deny-route-nexthopvirtualappliance_deny-route-nexthopvirtualappliance/**
-#         policies/deny-changing-vnet-dns-settings_deny-changing-vnet-dns-settings/**
-#         initiatives/network-guardrail-1.0.0-preview_9338369c588440fa845ebcf3/**
+    - name: Check for resource compliance
+      uses: azure/policy-compliance-scan@v0
+      with:
+        scopes: |
+          /subscriptions/ac523bbb-5dca-46d7-9d3a-e16ddae8a7dd
+        wait: false
